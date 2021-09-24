@@ -5,24 +5,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/style.css">
+        <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
         <title>Hangman</title>
     </head>
     <body>
         <header>
-            <h1>HangWood 0.1</h1>
+            <h1>HangWood 0.2</h1>
             <img src="./assets/img/cropped-becode-logo-seal.png" alt="Logo BeCode">
         </header>
         <main>
-            <section>
-                <figure id="hang"></figure>
+            <section class="container">
+                <section>
+                    <figure id="hang"><img src="" alt="état du pendu"></figure>
+                </section>
+                <section>
+                    <div>
+                        <input type="text" id="inLetter" placeholder="Enter a letter" maxlength="1"><button id="btnLetter">Submit</button>
+                    </div>
+                    <div>
+                        <input type="text" id="inWord" placeholder="Enter your word"><button id="btnWord">Submit</button>
+                    </div>
+                </section>
+                <section>
+                    <p id="fault">Wrong letter :</p>
+                    <p id="guess"></p>
+                </section>
             </section>
             <section>
-                <input type="text" id="inLetter" placeholder="Enter a letter" maxlength="1"><button type="button" id="btnLetter">Submit</button>
-                <input type="text" id="inWord" placeholder="Enter your word"><button type="button" id="btnWord">Submit</button>
-            </section>
-            <section>
-                <p id="fault"></p>
-                <p id="guess"></p>
+                <button id="btnStart">Start</button>
             </section>
         </main>
         <footer>
