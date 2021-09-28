@@ -88,6 +88,10 @@ button:hover {
   cursor: pointer;
 }
 
+#guess {
+  letter-spacing: 1rem;
+}
+
 footer {
   background-color: darkred;
   height: 5%;
