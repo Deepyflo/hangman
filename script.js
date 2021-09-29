@@ -1,6 +1,11 @@
+alert("Hi you ! Welcome in this hangman. Your goal is to find the hidden word before you are hanged.");
+alert("Attention, all words are in french.");
+
 let btnLetter = document.getElementById("btnLetter");
+btnLetter.disabled = false;
 let letter;
 let btnWord = document.getElementById("btnWord");
+btnWord.disabled = false;
 let word;
 let pageGuess = document.getElementById("guess");
 let wrong = document.getElementById("fault");
@@ -9,7 +14,7 @@ let guess = "";
 let arrGuess = [];
 let displayGuess = "";
 let win = "";
-
+let verif = false;
 
 (() => {
     console.log(liste);
@@ -23,7 +28,7 @@ let win = "";
     console.log(arrGuess);
     arrGuess.forEach(element => {
         if (element == ' ') {
-            displayGuess += "&nbsp;";
+            displayGuess += "!";
         } else if (element == '\'') {
             displayGuess += "\'";
         } else if (element == "-") {
@@ -31,6 +36,7 @@ let win = "";
         } else {
             displayGuess += "_"
         }
+        displayGuess = displayGuess.replace("!", " ");
     });
     hang = document.getElementById("hang");
     img = document.createElement("img");
@@ -45,12 +51,12 @@ let win = "";
         letter = document.getElementById("inLetter");
         check = false;
         
-        if (letter.value == null) {
+        if (letter.value == "") {
             alert("please enter a letter");
         } else {
             pageGuess.innerHTML = "";
             for (let i = 0; i < arrGuess.length; i++) {
-                if (arrGuess[i] == letter.vamue) {
+                if (arrGuess[i] == letter.value) {
                     displayGuess = setCharAt(displayGuess, i, letter.value);
                     check = true;
                 }
@@ -64,6 +70,23 @@ let win = "";
                 setHang(fault);
             }
         }
+        if (fault == 6) {
+            win = "lose";
+        }
+        verif = false;
+        letPick.forEach(element => {
+            if (element == "_") {
+                verif = true;
+            } else {
+                verif = false;
+            }
+            
+        })
+        if (verif == true) {
+            win = "win";
+        }
+        checkWin(win);
+        console.log(win);
         console.log(fault);
         pageGuess.innerHTML = displayGuess;
         letter.value = "";
@@ -71,14 +94,20 @@ let win = "";
     btnWord.addEventListener("click", () => {
         word = document.getElementById("inWord");
         if (guess == word.value) {
-            win = true;
+            win = "win";
             displayGuess = guess;
         } else {
             fault++;
             wrong.innerHTML = word.value;
             setHang(fault);
         }
+        pageGuess.innerHTML = displayGuess;
+        console.log(win);
         word.value = "";
+        if (fault == 6) {
+            win = "lose";
+        }
+        checkWin(win);
     })
     
 })();
@@ -100,4 +129,16 @@ let setHang = (fault) => {
 let setCharAt = (str,index,chr) => {
     if(index > str.length-1) return str;
     return str.substring(0,index) + chr + str.substring(index+1);
+}
+
+let checkWin = (check) => {
+    if (check == "win") {
+        alert(`hurray, you win ! The word was ${guess}`);
+        btnLetter.disabled = true;
+        btnWord.disabled = true;
+    } else if (check == "lose") {
+        alert(`Oh no, you lose... The word was ${guess}`);
+        btnLetter.disabled = true;
+        btnWord.disabled = true;
+    }
 }
