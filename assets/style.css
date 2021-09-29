@@ -6,6 +6,7 @@
 body {
   background-color: #ff7e7ec2;
   color: #f9f9f9;
+  margin-top: 10vh;
 }
 
 header {
@@ -30,7 +31,7 @@ header img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90vh;
+  min-height: 90vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -94,11 +95,14 @@ button:hover {
 
 footer {
   background-color: darkred;
-  height: 5%;
+  min-height: 5%;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer ul {
@@ -106,9 +110,11 @@ footer ul {
   margin-top: 1.5vh;
 }
 
-footer ul li {
-  display: inline;
-  padding-right: 5rem;
-  padding-left: 5rem;
+@media only screen and (min-width: 495px) {
+  footer ul li {
+    display: inline;
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

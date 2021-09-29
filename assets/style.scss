@@ -5,6 +5,7 @@
 body {
     background-color: #ff7e7ec2;
     color: #f9f9f9;
+    margin-top: 10vh;
 }
 header {
     background-color: darkred;
@@ -26,7 +27,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     flex-wrap: wrap;
     section {
         text-align: center;
@@ -72,22 +73,29 @@ button {
     }
 }
 #guess {
-        letter-spacing: 1rem;
+    letter-spacing: 1rem;
     }
 footer {
     background-color: darkred;
-    height: 5%;
+    min-height: 5%;
     text-align: center;
-    position:fixed;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    justify-content: center;
     ul {
         list-style-type: none;
         margin-top: 1.5vh;
         li {
-            display: inline;
-            padding-right: 5rem;
-            padding-left: 5rem;
+            @media only screen and (max-width : 495px) {
+                
+            }
+            @media only screen and (min-width : 495px) {
+                display: inline;
+                padding-right: 5rem;
+                padding-left: 5rem;
+            }
+            
         }
     }
 }

@@ -1,5 +1,5 @@
-alert("Hi you ! Welcome in this hangman. Your goal is to find the hidden word before you are hanged.");
-alert("Attention, all words are in french.");
+// alert("Hi you ! Welcome in this hangman. Your goal is to find the hidden word before you are hanged.");
+// alert("Attention, all words are in french.");
 
 let btnLetter = document.getElementById("btnLetter");
 btnLetter.disabled = false;
