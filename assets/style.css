@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ff7e7ec2;
+  color: #f9f9f9;
+}
+
+header {
+  background-color: darkred;
+  height: 10%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+header img {
+  height: 10vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90vh;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container section {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.container section input {
+  height: 2rem;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+
+.container section input #inWord {
+  width: 25rem;
+}
+
+.container section input #inLetter {
+  width: 10rem;
+}
+
+.container section div {
+  margin: 3vh;
+}
+
+.container section p {
+  border: solid 1px darkred;
+  margin-top: 10rem;
+}
+
+button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: darkred;
+  border-color: darkred;
+  color: #f9f9f9;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#btnStart {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 50%;
+}
+
+#btnStart:hover {
+  cursor: pointer;
+}
+
+#guess {
+  letter-spacing: 1rem;
+}
+
+footer {
+  background-color: darkred;
+  height: 5%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer ul {
+  list-style-type: none;
+  margin-top: 1.5vh;
+}
+
+footer ul li {
+  display: inline;
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+/*# sourceMappingURL=style.css.map */
