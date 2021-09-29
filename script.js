@@ -5,37 +5,19 @@ let word;
 let pageGuess = document.getElementById("guess");
 let wrong = document.getElementById("fault");
 let fault = 0;
-let guess = "chien";
+let guess = "";
 let arrGuess = [];
 let displayGuess = "";
 let win = "";
 
-// function readTextFile(file)
-//     {
-//         let rawFile = new XMLHttpRequest();
-//         rawFile.open("GET", file, false);
-//         rawFile.onreadystatechange = function ()
-//         {
-//             if(rawFile.readyState === 4)
-//             {
-//                 if(rawFile.status === 200 || rawFile.status == 0)
-//                 {
-//                     let allText = rawFile.responseText;
-//                     let sep = allText.split('\n');
-//                     let randomNum = Math.floor(Math.random() * sep.length);
-//                     let randomLine = sep[randomNum];
-//                     // console.log("All Lines\n"+allText);
-//                     console.log("Line Number\n"+(randomNum+1));
-//                     console.log(/*"Random Line\n"+*/randomLine);
-//                     return randomLine;
-//                 }
-//             }
-//         }
-//         rawFile.send(null);
-//     }
-// guess = readTextFile("./assets/liste_francais.txt");
-// console.log(guess);
+
 (() => {
+    console.log(liste);
+    let max = liste.length - 1;
+    let min = 0;
+    let rnd = Math.floor(Math.random() * (max - min) + min);
+    console.log(rnd)
+    guess = liste[rnd].toString();
     console.log(guess);
     arrGuess = guess.split('');
     console.log(arrGuess);
@@ -44,8 +26,10 @@ let win = "";
             displayGuess += "&nbsp;";
         } else if (element == '\'') {
             displayGuess += "\'";
+        } else if (element == "-") {
+            displayGuess += "-";
         } else {
-            displayGuess += "_";
+            displayGuess += "_"
         }
     });
     hang = document.getElementById("hang");
@@ -117,4 +101,3 @@ let setCharAt = (str,index,chr) => {
     if(index > str.length-1) return str;
     return str.substring(0,index) + chr + str.substring(index+1);
 }
-
