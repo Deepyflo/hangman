@@ -98,7 +98,7 @@ let verif = false;
             displayGuess = guess;
         } else {
             fault++;
-            wrong.innerHTML = word.value;
+            wrong.innerHTML += word.value;
             setHang(fault);
         }
         pageGuess.innerHTML = displayGuess;
